@@ -1,0 +1,36 @@
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+.title{
+    color:ivory;
+
+    text-decoration: underline;
+}
+#content{
+    background-image:linear-gradient(yellowgreen,yellow);
+}
+#page{
+    background-image:linear-gradient(red,yellow);
+    background-repeat:no-repeat;
+    font-size: large;
+    text-align: center;
+}
+hr{
+   border-top: 2px dashed red;
+    width: 30%;
+}
