@@ -20,6 +20,7 @@ a:active {
 #content{
     background-image: url("../media/university1.jfif");
     background-repeat:no-repeat;
+    background-size:cover;
 }
 #page{
     background-image:linear-gradient(red,yellow);
