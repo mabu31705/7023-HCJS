@@ -3,7 +3,7 @@ a:link {
 }
 
 a:visited {
-    color: green;
+    color: orange
 }
 
 a:hover {
@@ -18,7 +18,8 @@ a:active {
     text-decoration: underline;
 }
 #content{
-    background-image:linear-gradient(yellowgreen,yellow);
+    background-image: url("../media/university1.jfif");
+    background-repeat:no-repeat;
 }
 #page{
     background-image:linear-gradient(red,yellow);
@@ -38,4 +39,7 @@ hr{
 }
 .ol2{
     list-style-type: square;
+}
+ol{
+color:orange;
 }
