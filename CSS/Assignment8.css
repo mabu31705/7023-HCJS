@@ -1,0 +1,17 @@
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu,.menu-item{
+    display: block;
+    background-color: bisque;
+    width: 100px;
+    border: 1px solid azure;
+}
+.container{
+    background-image:url("../media/dearsunset.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 1080px;
+}
