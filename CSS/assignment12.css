@@ -1,0 +1,20 @@
+*{box-sizing: border-box}
+.container{
+    display: flex;
+    background-color: DodgerBlue;
+    margin: 0;
+    padding: 0;
+    flex-flow: wrap;
+    height: 100vh;
+}
+.header,.navigation,.index,.content,.footer{
+    background-color: antiquewhite;
+    border:1px solid black;
+}
+.header,.navigation,.footer{width: 100%}
+.index{
+    margin:0;padding: 0; width: 20%;
+}
+.content{
+    margin: 0;padding: 0;width: 80%;
+}
