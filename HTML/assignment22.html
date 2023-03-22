@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, tr, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        input {
+            border: none;
+        }
+        .buttonSave{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form action="#" method="post">
+    <div>
+        <table id="page">
+
+        </table>
+
+
+    </div>
+
+</form>
+
+</body>
+</html>
+<script>
+    if ("sessionStorage" in window && "localStorage" in window) {
+        function storageObject() {
+            let name = document.getElementById("nameId").value;
+            let age = document.getElementById("ageId").value;
+            localStorage.setItem("name", name);
+            localStorage.setItem("age", age);
+            saveObject({name, age});
+        }
+
+        function saveObject(student) {
+            let getStd = JSON.parse(localStorage.getItem("listStudent"));
+            if (getStd) {
+                getStd.push(student);
+            } else {
+                getStd = [student];
+                JSON.parse(localStorage.getItem("listStudent"))
+            }
+            localStorage.setItem("listStudent", JSON.stringify(getStd));
+        }
+
+        function deleteData() {
+            sessionStorage.clear();
+            localStorage.clear();
+        }
+
+        getValue = JSON.parse(localStorage.getItem("listStudent"));
+        let data = "";
+        let dataOuter = "";
+        for (let i = 0; i < getValue.length; i++) {
+
+            data += `
+      <tr>
+        <td>${getValue[i].name}</td>
+        <td>${getValue[i].age}</td>
+      </tr>
+      `;
+            dataOuter = `
+       <tr>
+            <td>Name</td>
+            <td>Age</td>
+      </tr>
+      <tr>
+          <td><input type="text" id="nameId"></td>
+          <td><input type="number" id="ageId"></td>
+        </tr>
+      <tr>
+        <td colspan="2">
+            <button  type="button" class="buttonSave" onclick="storageObject()">Save</button></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+            <button  type="button" class="buttonSave" onclick="deleteData()">Clear Storage</button></td>
+      </tr>
+      `;
+            document.getElementById("page").innerHTML = dataOuter+data;
+
+        }
+
+    }
+</script>
