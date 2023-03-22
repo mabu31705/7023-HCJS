@@ -75,6 +75,10 @@
         <td colspan="2">
             <button  type="button" class="buttonSave" onclick="deleteData()">Clear Storage</button></td>
       </tr>
+       <tr>
+        <td colspan="2">
+            <button  type="button" class="buttonSave" onclick="window.location.reload()">Reload</button></td></td>
+      </tr>
             `;
             document.getElementById("page").innerHTML=data;
         } else {
@@ -97,13 +101,16 @@
           <td><input type="text" id="nameId"></td>
           <td><input type="number" id="ageId"></td>
         </tr>
-      <tr>
-        <td colspan="2">
+      <td colspan="2">
             <button  type="button" class="buttonSave" onclick="storageObject()">Save</button></td>
       </tr>
       <tr>
         <td colspan="2">
             <button  type="button" class="buttonSave" onclick="deleteData()">Clear Storage</button></td>
+      </tr>
+       <tr>
+        <td colspan="2">
+            <button  type="button" class="buttonSave" onclick="window.location.reload()">Reload</button></td></td>
       </tr>
       `;
                 document.getElementById("page").innerHTML = dataOuter+data;
