@@ -57,17 +57,38 @@
         }
 
         getValue = JSON.parse(localStorage.getItem("listStudent"));
-        let data = "";
-        let dataOuter = "";
-        for (let i = 0; i < getValue.length; i++) {
+        if(getValue==null){
+            let data = "";
+            data=`<tr>
+            <td>Name</td>
+            <td>Age</td>
+      </tr>
+      <tr>
+          <td><input type="text" id="nameId"></td>
+          <td><input type="number" id="ageId"></td>
+        </tr>
+      <tr>
+        <td colspan="2">
+            <button  type="button" class="buttonSave" onclick="storageObject()">Save</button></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+            <button  type="button" class="buttonSave" onclick="deleteData()">Clear Storage</button></td>
+      </tr>
+            `;
+            document.getElementById("page").innerHTML=data;
+        } else {
+            let data = "";
+            let dataOuter = "";
+            for (let i = 0; i < getValue.length; i++) {
 
-            data += `
+                data += `
       <tr>
         <td>${getValue[i].name}</td>
         <td>${getValue[i].age}</td>
       </tr>
       `;
-            dataOuter = `
+                dataOuter = `
        <tr>
             <td>Name</td>
             <td>Age</td>
@@ -85,9 +106,11 @@
             <button  type="button" class="buttonSave" onclick="deleteData()">Clear Storage</button></td>
       </tr>
       `;
-            document.getElementById("page").innerHTML = dataOuter+data;
+                document.getElementById("page").innerHTML = dataOuter+data;
 
+            }
         }
+
 
     }
 </script>
