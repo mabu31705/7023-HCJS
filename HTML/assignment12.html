@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment buổi 12 </title>
+    <script src="../JS/assignment12.js"></script>
+    <link rel="stylesheet" href="../CSS/assignment12.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Javascript</h1>
+    </div>
+    <div class="navigation">navigation bar</div>
+        <div class="index">
+            <ol><h2>5 loại vòng lặp trong Javascript</h2>
+                <li><h3><a onclick="gtWhile()">Vòng lặp while</a></h3></li>
+                <li><h3><a onclick="gtDoWhile()">Vòng lặp do..while</a></h3></li>
+                <li><h3><a onclick="gtFor()">Vòng lặp for</a></h3></li>
+                <li><h3><a onclick="gtForIn()">Vòng lặp for..in</a></h3></li>
+                <li><h3><a onclick="gtForOf()">Vòng lặp for..of</a></h3></li>
+            </ol>
+        </div>
+        <div class="content">
+            <h3 id="while">Vòng lặp while</h3>
+
+            <p><b>Ví dụ:</b><br>
+                &nbspvar i = 1;<br>
+                &nbspwhile(i <= 5) {
+                document.write("&ltp&gtSố i là: " + i + "&lt/p&gt");
+                i++;
+                }<br>
+                <b>Kết quả in ra</b><br>
+                &nbspSố i là: 1<br>
+                &nbspSố i là: 2<br>
+                &nbspSố i là: 3<br>
+                &nbspSố i là: 4<br>
+                &nbspSố i là: 5<br></p>
+            <h3 id="doWhile">Vòng lặp do...while</h3>
+            <p><b>Ví dụ:</b><br>
+                &nbspvar i = 1;<br>
+                &nbspdo {
+                document.write("&ltp&gtSố i là: " + i + "&lt/p&gt");
+                i++;
+                }<br>
+                &nbspwhile(i <= 5);<br>
+                <b>Kết quả in ra</b><br>
+                &nbspSố i là: 1<br>
+                &nbspSố i là: 2<br>
+                &nbspSố i là: 3<br>
+                &nbspSố i là: 4<br>
+                &nbspSố i là: 5<br>
+                <b>Vòng lặp do...while luôn thực thi một lần ngay cả khi biểu thức điều kiện là false</b>
+            </p>
+            <h3 id="for">Vòng lặp for</h3>
+            <p><b>Ví dụ:</b><br>
+                &nbsp// Một mảng trong JavaScript<br>
+                &nbspvar hoaQua= ["Táo", "Chuối", "Xoài", "Cam", "Lựu"];<br>
+
+                &nbsp // Lặp qua các phần tử trong mảng<br>
+                &nbsp for(var i = 0; i < hoaQua.length; i++) {<br>
+                &nbsp document.write("&ltp&gt" + hoaQua[i] + "&lt/p&gt");<br>
+                &nbsp}<br>
+                <b>Kết quả in ra</b><br>
+                &nbspTáo<br>
+                &nbspChuối<br>
+                &nbspXoài<br>
+                &nbspCam<br>
+                &nbspLựu<br>
+                <b>Vòng lặp for đặc biệt hữu ích cho việc lặp qua một mảng trong JavaScript.</b></p>
+            <h3 id="forIn">Vòng lặp for...in</h3>
+            <p><b>Ví dụ:</b><br>
+                &nbsp// Một đối tượng<br>
+                &nbspvar person = {"Tên": "Doanh", "Họ": "Vi", "Tuổi": "36"};<br>
+
+                &nbsp// Lặp qua tất cả các thuộc tính<br>
+                &nbspfor(var x in person) {<br>
+                &nbspdocument.write("&ltp&gt" + x + " = " + person[x] + "&lt/p&gt");<br>
+                &nbsp}<br>
+                <b>Kết quả in ra</b><br>
+                &nbspTên : Doanh<br>
+                &nbspHọ : Vi<br>
+                &nbspTuổi : 36<br>
+                <b>Vòng lặp for...in thích hợp lấy thuộc tính của đối tượng (giá trị phần tử trong mảng), nhưng không dùng
+                    cho mảng (đối tượng) mà mảng đó quan trọng thứ tự chỉ mục</b></p>
+            <h3 id="forOf">Vòng lặp for...of</h3>
+            <p><b>Ví dụ:</b><br>
+                &nbsp// Tạo một mảng chuẩn bị để lặp<br>
+                &nbsplet letters = ["a", "b", "c", "d", "e", "f"];<br>
+
+                &nbspfor(let letter of letters) {<br>
+                &nbspconsole.log(letter); // a,b,c,d,e,f<br>
+                &nbsp}<br>
+
+                &nbsp// Lặp qua một chuỗi<br>
+                &nbsplet greet = "Hello World!";<br>
+
+                &nbspfor(let character of greet) {<br>
+                &nbspconsole.log(character); // H,e,l,l,o, ,W,o,r,l,d,!<br>
+                &nbsp}<br>
+                <b>Vòng lặp for...of không dùng cho đối tượng (mảng trong mảng), muốn lấy thuộc tính của đối tượng có thể
+                    dùng for...in</b>
+            </p>
+        </div>
+    <div class="footer">Footer</div>
+
+
+</div>
+
+</body>
+</html>
