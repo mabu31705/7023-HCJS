@@ -2,105 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-  <title>Registration Form</title>
-  <style>
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 50px;
-    }
-    input {
-      margin-bottom: 20px;
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-      box-shadow: 0 0 5px rgba(0,0,0,.3);
-      width: 300px;
-    }
-    input[type="submit"] {
-      background-color: #4CAF50;
-      color: white;
-      cursor: pointer;
-    }
-    input[type="submit"]:hover {
-      background-color: #45a049;
-    }
-  </style>
+    <title>Registration Form</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        input {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+            width: 300px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
 <form name="myForm" onsubmit="return validateForm()" method="post">
-  <label for="username">Username:</label>
-  <input type="text" id="username" name="username" placeholder="Enter username" required>
-  <span id="username-error"></span>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" placeholder="Enter username" required>
+    <span id="username-error"></span>
 
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password" placeholder="Enter password" required>
-  <span id="password-error"></span>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter password" required>
+    <span id="password-error"></span>
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" placeholder="Enter email" required>
-  <span id="email-error"></span>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter email" required>
+    <span id="email-error"></span>
 
-  <label for="telephone">Telephone:</label>
-  <input type="tel" id="telephone" name="telephone" placeholder="Enter telephone number" required>
-  <span id="telephone-error"></span>
+    <label for="telephone">Telephone:</label>
+    <input type="tel" id="telephone" name="telephone" placeholder="Enter telephone number" required>
+    <span id="telephone-error"></span>
 
-  <input type="submit" value="Submit">
+    <input type="submit" value="Submit">
 
-  <script>
-    function validateForm() {
-      var username = document.forms["myForm"]["username"].value;
-      var password = document.forms["myForm"]["password"].value;
-      var email = document.forms["myForm"]["email"].value;
-      var telephone = document.forms["myForm"]["telephone"].value;
+    <script>
+        function validateForm() {
+          let username = document.forms["myForm"]["username"].value;
+          let password = document.forms["myForm"]["password"].value;
+          let email = document.forms["myForm"]["email"].value;
+          let telephone = document.forms["myForm"]["telephone"].value;
 
-      if (username == "") {
-        document.getElementById("username-error").innerHTML = "Username must be filled out";
-        return false;
-      } else {
-        document.getElementById("username-error").innerHTML = "";
-      }
+            if (username === "") {
+                document.getElementById("username-error").innerHTML = "Username must be filled out";
+                return false;
+            } else {
+                document.getElementById("username-error").innerHTML = "";
+            }
 
-      if (password == "") {
-        document.getElementById("password-error").innerHTML = "Password must be filled out";
-        return false;
-      } else {
-        document.getElementById("password-error").innerHTML = "";
-      }
+            if (password === "") {
+                document.getElementById("password-error").innerHTML = "Password must be filled out";
+                return false;
+            } else {
+                document.getElementById("password-error").innerHTML = "";
+            }
 
-      if (email == "") {
-        document.getElementById("email-error").innerHTML = "Email must be filled out";
-        return false;
-      } else if (!validateEmail(email)) {
-        document.getElementById("email-error").innerHTML = "Invalid email address";
-        return false;
-      } else {
-        document.getElementById("email-error").innerHTML = "";
-      }
+            if (email === "") {
+                document.getElementById("email-error").innerHTML = "Email must be filled out";
+                return false;
+            } else if (!validateEmail(email)) {
+                document.getElementById("email-error").innerHTML = "Invalid email address";
+                return false;
+            } else {
+                document.getElementById("email-error").innerHTML = "";
+            }
 
-      if (telephone == "") {
-        document.getElementById("telephone-error").innerHTML = "Telephone must be filled out";
-        return false;
-      } else if (!validateTelephone(telephone)) {
-        document.getElementById("telephone-error").innerHTML = "Invalid telephone number";
-        return false;
-      } else {
-        document.getElementById("telephone-error").innerHTML = "";
-      }
+            if (telephone === "") {
+                document.getElementById("telephone-error").innerHTML = "Telephone must be filled out";
+                return false;
+            } else if (!validateTelephone(telephone)) {
+                document.getElementById("telephone-error").innerHTML = "Invalid telephone number";
+                return false;
+            } else {
+                document.getElementById("telephone-error").innerHTML = "";
+            }
 
-      return true;
+            return true;
 
-      function validateEmail(email) {
-        var re = /\S+@\S+\.\S+/;
-        return re.test(email);
-      }
+            function validateEmail(email) {
+                let re = /\S+@\S+\.\S+/;
+                return re.test(email);
+            }
 
-      function validateTelephone(telephone) {
-        var re = /^\d{10}$/; //10 digits
-        return re.test(telephone);
-      }
-  </script>
+            function validateTelephone(telephone) {
+                let re = /^\d{10}$/; //10 digits
+                return re.test(telephone);
+            }
+        }
+    </script>
 </form>
 </body>
 </html>
